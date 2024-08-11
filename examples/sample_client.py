@@ -17,7 +17,7 @@ from myo.types import (
     MotionEvent,
     VibrationType,
 )
-from myo.constants import RGB_PINK
+from myo.constants import RGB_GREEN
 
 
 class SampleClient(MyoClient):
@@ -71,7 +71,7 @@ async def main(args: argparse.Namespace):
 
     logging.info("bye bye!")
     await sc.vibrate(VibrationType.LONG)
-    await sc.led(RGB_PINK)
+    await sc.led(RGB_GREEN)
     await sc.disconnect()
 
 
