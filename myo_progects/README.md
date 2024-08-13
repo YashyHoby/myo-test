@@ -39,19 +39,19 @@ Myoが接続され、コンソール上に数値の羅列が表示されれば�
 
 ## myo_projectsコード解説
 ### emgData_recorder.py
-Myoから指定した秒数間データを取得し、`./emg_data`にjson形式で保存する。`--seconds`で秒数を指定できる
+Myoから指定した秒数間データを取得し、`./emg_data`にjson形式で保存します。`--seconds`で秒数を指定できます。
 ```
-py .\myo_progects\emgData_recorder.py -- seconds 20
+py .\myo_progects\emgData_recorder.py --seconds 20
 ```
 ### fv_emgData_display.py
-`emgData_recorder.py`で取得したデータのうち、fvデータ（フィルタリング済みの筋電値）をグラフ表示する。
+`emgData_recorder.py`で取得したデータのうち、fvデータ（フィルタリング済みの筋電値）をグラフ表示します。
 ```
-py .\myo_progects\emgData_recorder.py -- seconds 20
+py .\myo_progects\fv_emgData_display.py
 ```
 ### myo_viewer.py
-Myoの筋電値をリアルタイムでグラフに描画する。
-`--plot_type`で描画タイプを指定できる（`line`:棒グラフ、`radar`:レーダーチャート）
-`--fps`で描画速度を指定できる。（デフォルトは30fps）
+Myoの筋電値をリアルタイムでグラフに描画します。
+`--plot_type`で描画タイプを指定できます（`line`:棒グラフ、`radar`:レーダーチャート）
+`--fps`で描画速度を指定できます。（デフォルトは30fps）
 ```
 py .\myo_progects\myo_viewer.py --plot_type radar --fps 30
 ```
