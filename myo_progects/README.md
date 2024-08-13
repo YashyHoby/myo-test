@@ -28,7 +28,7 @@ githubをクローンし、`dl-myo`下にある`Myo`ディレクトリを利用�
 pip install bleak
 ```
 
-## サンプルコード
+## dl-myoサンプルコード
 iomzさんが公開しているプロジェクトのサンプルコードを動かしてみましょう。
 
 クローンしたプロジェクト内で開発している場合、`dl-myo`下で次のコマンドで実行できます。
@@ -36,3 +36,25 @@ iomzさんが公開しているプロジェクトのサンプルコードを動�
 py .\examples\sample_client.py
 ```
 Myoが接続され、コンソール上に数値の羅列が表示されれば成功です。（このコードでは、データのファイル出力等はされません。）
+
+## myo_projectsコード解説
+### emgData_recorder.py
+Myoから指定した秒数間データを取得し、`./emg_data`にjson形式で保存する。`--seconds`で秒数を指定できる
+```
+py .\myo_progects\emgData_recorder.py -- seconds 20
+```
+### fv_emgData_display.py
+`emgData_recorder.py`で取得したデータのうち、fvデータ（フィルタリング済みの筋電値）をグラフ表示する。
+```
+py .\myo_progects\emgData_recorder.py -- seconds 20
+```
+### myo_viewer.py
+Myoの筋電値をリアルタイムでグラフに描画する。
+`--plot_type`で描画タイプを指定できる（`line`:棒グラフ、`radar`:レーダーチャート）
+`--fps`で描画速度を指定できる。（デフォルトは30fps）
+```
+py .\myo_progects\myo_viewer.py --plot_type radar --fps 30
+```
+
+
+
