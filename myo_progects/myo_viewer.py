@@ -92,7 +92,7 @@ def plot_task(queue, stop_event, fps, plot_type):
                 ax.fill(angles, data, color=colors[0], alpha=0.25)
             return line,
 
-    else:  # default to line plot
+    else:  # default to line pl
         fig, ax = plt.subplots(figsize=(10, 6))
         ax.set_xlim(0, 50)
         ax.set_ylim(0, 1000)
